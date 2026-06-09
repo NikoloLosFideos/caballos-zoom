@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visor de Alta Resolucion - Caballos Gigante</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+    <style>
+        html, body, #visor { 
+            width: 100%; 
+            height: 100%; 
+            margin: 0; 
+            background: #0c0c0c; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="visor"></div>
+
+    <script>
+        var viewer = OpenSeadragon({
+            id: "visor",
+            maxZoomPixelRatio: 3,
+            prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/images/",
+            tileSources: {
+                Image: {
+                    xmlns: "http://schemas.microsoft.com/deepzoom/2008",
+                    Url: "mi_obra_zoom_files/",
+                    Format: "jpeg",
+                    Overlap: 1,
+                    TileSize: 254,
+                    Size: {
+                        Width: 18000,
+                        Height: 12039
+                    }
+                }
+            },
+            showNavigator: true,
+            navigatorPosition: "BOTTOM_RIGHT",
+            animationTime: 0.5,
+            blendingTime: 0.1
+        });
+    </script>
+</body>
+</html>
